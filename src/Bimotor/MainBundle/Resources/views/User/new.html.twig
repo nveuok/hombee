@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="col-md-offset-3 col-md-6 jumbotron">
+        <h1>{{ 'Create new user'|trans }}</h1>
+
+        <div class="input-group ">
+            <span class="input-group-addon">{{ 'First name'|trans }}</span>
+            {{ form_widget(form.firstName, {'attr': {'class': 'form-control' }}) }}
+        </div>
+        <div class="input-group ">
+            <span class="input-group-addon">{{ 'Last name'|trans }}</span>
+            {{ form_widget(form.lastName, {'attr': {'class': 'form-control' }}) }}
+        </div>
+        <div class="input-group ">
+            <span class="input-group-addon">{{ 'Username'|trans }}</span>
+            {{ form_widget(form.username, {'attr': {'class': 'form-control' }}) }}
+        </div>
+        <div class="input-group "><span for="bimotor_mainbundle_user_password" class="required">Password</span>
+        </div>
+        <div class="input-group ">
+        </div>
+        <div class="input-group ">
+
+
+        </div>
+        {#<div><span class="required">Updated at</span>#}
+
+        {#<div id="bimotor_mainbundle_user_updatedAt">#}
+
+        {#</div>#}
+        {#<div>#}
+        {#<button type="submit" id="bimotor_mainbundle_user_submit" name="bimotor_mainbundle_user[submit]">Create</button>#}
+        {#</div>#}
+        {#<input type="hidden" id="bimotor_mainbundle_user__token" name="bimotor_mainbundle_user[_token]" value="rue8LrDpR23vdZ0g-RgtgO-agPM_4dD6xpwLoG488bY"></div>#}
+        {#{{ form_row(form) }}#}
+
+        <ul class="record_actions">
+            <li>
+                <a href="{{ path('user') }}">
+                    Back to the list
+                </a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

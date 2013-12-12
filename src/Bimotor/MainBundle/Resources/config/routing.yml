@@ -1,0 +1,16 @@
+login:
+    pattern: /login
+    defaults: { _controller: BimotorMainBundle:Security:login }
+
+login_check:
+    pattern: /login-check
+    defaults: { _controller: BimotorMainBundle:Security:loginCheck }
+
+homepage:
+    pattern: /
+    defaults: { _controller: BimotorMainBundle:Main:index }
+
+
+get_users:
+    pattern: /get-users
+    defaults: { _controller: BimotorMainBundle:Security:getUserList }

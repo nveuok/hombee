@@ -1,0 +1,12 @@
+bimotor_main:
+    resource: "@BimotorMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+_imagine:
+    resource: .
+    type:     imagine
+
+
+BimotorMainBundle_user:
+    resource: "@BimotorMainBundle/Resources/config/routing/user.yml"
+    prefix:   /user

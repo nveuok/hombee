@@ -1,0 +1,37 @@
+{% extends '::ajax_base.html.twig' %}
+
+{% block content %}
+    <div ng-controller="LoginController" data-usernr="{{ users|length }}">
+        <form novalidate>
+            <div class="user-container center-block">
+
+                {# Users section #}
+                <div class="center">
+                    <div class="alert alert-danger field-title" ng-hide="noUser">{{ 'Select an user'|trans }} <span class="badge badge-green">({{ users|length }})</span></div>
+                    <div class="alert alert-success field-title" ng-show="userSelected">{{ 'Enter password'|trans }}</div>
+                    <br/>
+                    {% for index, user in users %}
+                        <a href="#" class="btn btn-info user-logo" ng-click="selectUser({{ loop.index }})" ng-show="users.user{{ loop.index }}.visible">
+                            <img src="{{ asset(upload_dir_users ~ user.image)|imagine_filter('user') }}"/>
+                            <input type="hidden" value="{{ user.username }}" username="{{ user.username }}" usernumber="{{ loop.index }}" ng-disabled="!users.user{{ loop.index }}.visible" ng-model="username"/>
+                        </a>
+                    {% endfor %}
+                </div>
+
+                {# Password field with login button#}
+                <div class="input-group padding5" ng-show="noUser">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-wrench"></span></span>
+                    <input type="password" name="password" placeholder="{{ 'Password'|trans }}" class="form-control" ng-model="password"/>
+                    {# Login button #}
+                    <span class="input-group-btn"><button ng-click="login()" class="btn btn-primary form-control">{{ 'Login'|trans }}</button></span>
+                </div>
+                <span class="label label-danger" ng-show="error.password">{{ 'Password incorrect!'|trans }}</span>
+
+                {# Change user button #}
+                <div ng-show="hideLoginButton" class="login-buttons center">
+                    <button class="btn btn-info btn-sm" ng-click="showAllUsers()" ng-show="userSelected">{{ 'Change user'|trans }}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

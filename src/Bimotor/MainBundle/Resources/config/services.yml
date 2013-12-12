@@ -1,0 +1,13 @@
+parameters:
+#    bimotor_main.example.class: Bimotor\MainBundle\Example
+
+services:
+    security_helper:
+        class: Bimotor\MainBundle\Service\Helper\SecurityHelper
+        calls:
+            - [setEm, [@doctrine.orm.entity_manager]]
+            - [setUserManager, [@user_manager]]
+            - [setSecurityContext, [@security.context]]
+    user_manager:
+        class: Bimotor\MainBundle\Service\Manager\UserManager
+        arguments: [ @security.encoder_factory, @doctrine.orm.entity_manager ]

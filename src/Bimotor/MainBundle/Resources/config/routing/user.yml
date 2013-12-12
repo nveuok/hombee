@@ -1,0 +1,30 @@
+user:
+    pattern:  /
+    defaults: { _controller: "BimotorMainBundle:User:index" }
+
+user_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BimotorMainBundle:User:show" }
+
+user_new:
+    pattern:  /new
+    defaults: { _controller: "BimotorMainBundle:User:new" }
+
+user_create:
+    pattern:  /create
+    defaults: { _controller: "BimotorMainBundle:User:create" }
+    requirements: { _method: post }
+
+user_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BimotorMainBundle:User:edit" }
+
+user_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BimotorMainBundle:User:update" }
+    requirements: { _method: post|put }
+
+user_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BimotorMainBundle:User:delete" }
+    requirements: { _method: post|delete }
