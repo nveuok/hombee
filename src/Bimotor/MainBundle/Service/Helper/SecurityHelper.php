@@ -40,5 +40,7 @@ class SecurityHelper
     {
         $token = new UsernamePasswordToken($loggingUser->getUsername(), $loggingUser->getPassword(), 'main', $loggingUser->getRoles());
         $this->securityContext->setToken($token);
+        var_dump($this->securityContext->getToken()->getUser());
+        die;
     }
 }

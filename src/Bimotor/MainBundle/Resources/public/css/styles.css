@@ -29,3 +29,7 @@
 .badge-green {
     background-color: darkgreen;
 }
+.error {
+    /*background-color: darkred;*/
+    border-color: red;
+}

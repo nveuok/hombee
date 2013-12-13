@@ -1,6 +1,6 @@
 'use strict';
 
-BimotorApp.controller('LoginController', function ($scope, $attrs, loginService) {
+BimotorApp.controller('LoginController', function ($scope, $attrs, loginService, appService) {
         $scope.error = {};
         $scope.currentUser = {
             'username': '',
@@ -38,7 +38,21 @@ BimotorApp.controller('LoginController', function ($scope, $attrs, loginService)
         }
         $scope.login = function () {
             $scope.currentUser.password = $scope.password;
-            loginService.login($scope.currentUser);
+            loginService.login($scope.currentUser, jsBaseParams.loginCheckUrl).then(function (data) {
+                if (data.status == '401') {
+                    $scope.error.password = true;
+                    $scope.password = '';
+                } else {
+                    $scope.error.password = false;
+                    $scope.loggedUser = {
+                        'username': data.status
+                    };
+                    appService.getPage(jsBaseParams.clientUrl).then(function (response) {
+                        console.log(response);
+                        $scope.template = response.html;
+                    });
+                }
+            });
         }
 
         $scope.userNr = $attrs.usernr;

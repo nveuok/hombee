@@ -14,3 +14,7 @@ homepage:
 get_users:
     pattern: /get-users
     defaults: { _controller: BimotorMainBundle:Security:getUserList }
+
+client_crud:
+    pattern: /client
+    defaults: { _controller: BimotorMainBundle:Security:clientCRUD }

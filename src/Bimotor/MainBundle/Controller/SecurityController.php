@@ -16,6 +16,12 @@ class SecurityController extends Controller
         return new Response($html);
     }
 
+    public function getUserListAction()
+    {
+        $users = $this->getDoctrine()->getManager()->getRepository('BimotorMainBundle:User')->getUsers();
+        return new Response(json_encode(array()));
+    }
+
     public function loginCheckAction(Request $request)
     {
         $params = array();
@@ -25,7 +31,7 @@ class SecurityController extends Controller
             if (is_object($loggingUser) && property_exists($loggingUser, 'username') && property_exists($loggingUser, 'password')) {
                 $params['status'] = ($login = $this->get('security_helper')->handleLogin($loggingUser)) ? $login : '401';
             }
-        } elseif ($this->container->get('security.context')->isGranted('IS_AUTHENTICATED_FULLY')) {
+        } elseif ($this->container->get('security.context')->isGranted('IS_AUTHENTICATED_FULLY') && $this->getUser()) {
             $params['status'] = $this->getUser()->getUsername();
         } else {
             $params['status'] = '401';
@@ -36,9 +42,11 @@ class SecurityController extends Controller
         return new Response(json_encode($params));
     }
 
-    public function getUserListAction()
+    public function clientCRUDAction()
     {
-        $users = $this->getDoctrine()->getManager()->getRepository('BimotorMainBundle:User')->getUsers();
-        return new Response(json_encode(array()));
+        if (!$this->getUser()) {
+            return new Response(json_encode(array('status' => '401')));
+        }
+        return new Response(json_encode(array('html' => $this->renderView('BimotorMainBundle:Client:clientCRUD.html.twig'))));
     }
 }

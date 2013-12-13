@@ -72,49 +72,53 @@ class __TwigTemplate_61b2c876ac00505675a434d7cbf078567059d714387520951e6265a6381
             'loginCheckUrl': '";
         // line 27
         echo $this->env->getExtension('routing')->getPath("login_check");
+        echo "',
+            'clientUrl': '";
+        // line 28
+        echo $this->env->getExtension('routing')->getPath("client_crud");
         echo "'
         }
     </script>
     <script src=\"";
-        // line 30
+        // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/bimotormain/js/jquery-1.10.2.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 31
+        // line 32
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/bimotormain/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 32
+        // line 33
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/bimotormain/js/angular.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 33
+        // line 34
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/bimotormain/js/seed/lib/angular/angular-sanitize.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 34
+        // line 35
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/bimotormain/js/seed/js/app.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 35
+        // line 36
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/bimotormain/js/seed/js/AppController.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 36
+        // line 37
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/bimotormain/js/seed/js/LoginController.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 37
+        // line 38
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/bimotormain/js/seed/js/services.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 38
+        // line 39
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/bimotormain/js/seed/js/directives.js"), "html", null, true);
         echo "\"></script>
     ";
-        // line 39
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 40
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 41
         echo "</body>
 </html>";
     }
@@ -150,7 +154,7 @@ class __TwigTemplate_61b2c876ac00505675a434d7cbf078567059d714387520951e6265a6381
     {
     }
 
-    // line 39
+    // line 40
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -167,6 +171,6 @@ class __TwigTemplate_61b2c876ac00505675a434d7cbf078567059d714387520951e6265a6381
 
     public function getDebugInfo()
     {
-        return array (  154 => 39,  149 => 17,  143 => 18,  141 => 17,  137 => 15,  134 => 14,  129 => 7,  123 => 5,  118 => 40,  116 => 39,  112 => 38,  108 => 37,  104 => 36,  100 => 35,  96 => 34,  92 => 33,  88 => 32,  84 => 31,  80 => 30,  74 => 27,  70 => 26,  66 => 25,  62 => 24,  57 => 21,  54 => 14,  52 => 13,  46 => 10,  41 => 9,  39 => 8,  37 => 7,  33 => 6,  29 => 5,  24 => 2,);
+        return array (  158 => 40,  153 => 17,  147 => 18,  145 => 17,  141 => 15,  138 => 14,  133 => 7,  127 => 5,  122 => 41,  120 => 40,  116 => 39,  112 => 38,  108 => 37,  104 => 36,  100 => 35,  96 => 34,  92 => 33,  88 => 32,  84 => 31,  78 => 28,  74 => 27,  70 => 26,  66 => 25,  62 => 24,  57 => 21,  54 => 14,  52 => 13,  46 => 10,  41 => 9,  39 => 8,  37 => 7,  33 => 6,  29 => 5,  24 => 2,);
     }
 }

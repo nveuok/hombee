@@ -85,7 +85,8 @@ class __TwigTemplate_d892e7c040afcf204e18878500cc435afd303859247310c2bb710ca850a
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "index"), "html", null, true);
             echo "\" ng-disabled=\"!users.user";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "index"), "html", null, true);
-            echo ".visible\" ng-model=\"username\"/>
+            echo ".visible\"
+                                   ng-model=\"username\"/>
                         </a>
                     ";
             ++$context['loop']['index0'];
@@ -100,33 +101,33 @@ class __TwigTemplate_d892e7c040afcf204e18878500cc435afd303859247310c2bb710ca850a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['index'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 19
+        // line 20
         echo "                </div>
 
                 ";
-        // line 22
+        // line 23
         echo "                <div class=\"input-group padding5\" ng-show=\"noUser\">
                     <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-wrench\"></span></span>
                     <input type=\"password\" name=\"password\" placeholder=\"";
-        // line 24
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Password"), "html", null, true);
-        echo "\" class=\"form-control\" ng-model=\"password\"/>
+        echo "\" class=\"form-control\" ng-model=\"password\" ng-class=\"{error: error.password}\"/>
                     ";
-        // line 26
+        // line 27
         echo "                    <span class=\"input-group-btn\"><button ng-click=\"login()\" class=\"btn btn-primary form-control\">";
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Login"), "html", null, true);
         echo "</button></span>
                 </div>
                 <span class=\"label label-danger\" ng-show=\"error.password\">";
-        // line 28
+        // line 29
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Password incorrect!"), "html", null, true);
         echo "</span>
 
                 ";
-        // line 31
+        // line 32
         echo "                <div ng-show=\"hideLoginButton\" class=\"login-buttons center\">
                     <button class=\"btn btn-info btn-sm\" ng-click=\"showAllUsers()\" ng-show=\"userSelected\">";
-        // line 32
+        // line 33
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Change user"), "html", null, true);
         echo "</button>
                 </div>
@@ -148,6 +149,6 @@ class __TwigTemplate_d892e7c040afcf204e18878500cc435afd303859247310c2bb710ca850a
 
     public function getDebugInfo()
     {
-        return array (  130 => 32,  127 => 31,  122 => 28,  116 => 26,  112 => 24,  108 => 22,  104 => 19,  81 => 16,  77 => 15,  70 => 14,  53 => 13,  48 => 11,  42 => 10,  39 => 9,  31 => 4,  28 => 3,);
+        return array (  131 => 33,  128 => 32,  123 => 29,  117 => 27,  113 => 25,  109 => 23,  105 => 20,  81 => 16,  77 => 15,  70 => 14,  53 => 13,  48 => 11,  42 => 10,  39 => 9,  31 => 4,  28 => 3,);
     }
 }

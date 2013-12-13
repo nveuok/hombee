@@ -13,7 +13,8 @@
                     {% for index, user in users %}
                         <a href="#" class="btn btn-info user-logo" ng-click="selectUser({{ loop.index }})" ng-show="users.user{{ loop.index }}.visible">
                             <img src="{{ asset(upload_dir_users ~ user.image)|imagine_filter('user') }}"/>
-                            <input type="hidden" value="{{ user.username }}" username="{{ user.username }}" usernumber="{{ loop.index }}" ng-disabled="!users.user{{ loop.index }}.visible" ng-model="username"/>
+                            <input type="hidden" value="{{ user.username }}" username="{{ user.username }}" usernumber="{{ loop.index }}" ng-disabled="!users.user{{ loop.index }}.visible"
+                                   ng-model="username"/>
                         </a>
                     {% endfor %}
                 </div>
@@ -21,7 +22,7 @@
                 {# Password field with login button#}
                 <div class="input-group padding5" ng-show="noUser">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-wrench"></span></span>
-                    <input type="password" name="password" placeholder="{{ 'Password'|trans }}" class="form-control" ng-model="password"/>
+                    <input type="password" name="password" placeholder="{{ 'Password'|trans }}" class="form-control" ng-model="password" ng-class="{error: error.password}"/>
                     {# Login button #}
                     <span class="input-group-btn"><button ng-click="login()" class="btn btn-primary form-control">{{ 'Login'|trans }}</button></span>
                 </div>

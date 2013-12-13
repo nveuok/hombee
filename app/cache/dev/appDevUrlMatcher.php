@@ -162,6 +162,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Bimotor\\MainBundle\\Controller\\SecurityController::getUserListAction',  '_route' => 'get_users',);
         }
 
+        // client_crud
+        if ($pathinfo === '/client') {
+            return array (  '_controller' => 'Bimotor\\MainBundle\\Controller\\SecurityController::clientCRUDAction',  '_route' => 'client_crud',);
+        }
+
         // _imagine_user
         if (0 === strpos($pathinfo, '/media/cache/user') && preg_match('#^/media/cache/user/(?P<path>.+)$#s', $pathinfo, $matches)) {
             if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
